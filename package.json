@@ -1,0 +1,22 @@
+{
+  "name": "roman-numeral-redux-jest",
+  "version": "1.0.0",
+  "description": "## In Redux and Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/visaudi/roman-numeral-redux-just.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/visaudi/roman-numeral-redux-just/issues"
+  },
+  "homepage": "https://github.com/visaudi/roman-numeral-redux-just#readme",
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+}
