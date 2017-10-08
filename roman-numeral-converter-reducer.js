@@ -1,4 +1,6 @@
-module.exports.convertRomanToHinduArabicNumeral = function () {
+module.exports.convertHinduArabicToRomanNumeral = function () {
 
-
+    return {
+        romanNumber: "I"
+    }
 };

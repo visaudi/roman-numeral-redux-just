@@ -1,12 +1,12 @@
-const {convertRomanToHinduArabicNumeral} = require("./roman-numeral-converter-reducer");
+const {convertHinduArabicToRomanNumeral} = require("./roman-numeral-converter-reducer");
 
-it("translates a Hindu-Arabic numeral to its Roman numeral equivalent.", function () {
+it("translates a Hindu Arabic numeral to its Roman numeral equivalent.", function () {
 
-    expect(convertRomanToHinduArabicNumeral({}, {
-        type: "ROMAN_TO_INTEGER",
-        hinduArabicNumber: "i"
+    expect(convertHinduArabicToRomanNumeral({}, {
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 1 
     })).toEqual({
-        romanNumber: 1
+        romanNumber: "I"
     });;
 
 });
