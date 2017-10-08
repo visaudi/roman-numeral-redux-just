@@ -7,6 +7,15 @@ it("translates a Hindu Arabic numeral to its Roman numeral equivalent.", functio
         hinduArabicNumber: 1 
     })).toEqual({
         romanNumber: "I"
-    });;
+    });
 
+});
+
+it("translates '2' to 'II'.", function () {
+    expect(convertHinduArabicToRomanNumeral({}, {
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 2
+    })).toEqual({
+        romanNumber: "II"
+    });
 });
