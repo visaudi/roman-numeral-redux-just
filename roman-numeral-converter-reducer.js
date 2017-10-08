@@ -1,10 +1,11 @@
 module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) {
-    if (action.hinduArabicNumber === 2) {
-        return {
-            romanNumber: "II"
+    function repeatNumeralI (number) {
+        if (number > 1) {
+            return "I" + repeatNumeralI(number - 1);
         }
+        return "I";
     }
     return {
-        romanNumber: "I"
+        romanNumber: repeatNumeralI(action.hinduArabicNumber) 
     }
 };
