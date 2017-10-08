@@ -19,3 +19,12 @@ it("translates '2' to 'II'.", function () {
         romanNumber: "II"
     });
 });
+
+it("translates '3' to 'III'.", function () {
+    expect(convertHinduArabicToRomanNumeral({}, {
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 3
+    })).toEqual({
+        romanNumber: "III"
+    });
+});
