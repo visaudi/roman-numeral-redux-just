@@ -28,3 +28,12 @@ it("translates '3' to 'III'.", function () {
         romanNumber: "III"
     });
 });
+
+it("translates '4' to 'IV'", function () {
+    expect(convertHinduArabicToRomanNumeral({}, {
+        type: "INTEGER_TO_ROMAN",
+	hinduArabicNumber: 4
+    })).toEqual({
+        romanNumber: "IV"
+    });
+});
