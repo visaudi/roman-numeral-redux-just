@@ -37,3 +37,12 @@ it("translates '4' to 'IV'", function () {
         romanNumber: "IV"
     });
 });
+
+it("translates '5' to 'V'", function () {
+    expect(convertHinduArabicToRomanNumeral({}, {
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 5
+    })).toEqual({
+        romanNumber: "V"
+    });
+});
