@@ -47,3 +47,12 @@ it("translates '5' to 'V'", function () {
     });
 });
 
+it("translates '6' to 'VI'", function () {
+    expect(convertHinduArabicToRomanNumeral({}, {
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 6
+    })).toEqual({
+        romanNumber: "VI"
+    });
+});
+
