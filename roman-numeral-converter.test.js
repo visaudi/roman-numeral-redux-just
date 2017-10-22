@@ -56,3 +56,19 @@ it("translates '6' to 'VI'", function () {
     });
 });
 
+it("translates '7' to 'VII'", function () {
+	expect(convertHinduArabicToRomanNumeral({}, {
+			type: "INTEGER_TO_ROMAN",
+			hinduArabicNumber: 7
+	})).toEqual({
+			romanNumber: "VII"
+	});
+});
+it("translates '8' to 'VIII'", function () {
+	expect(convertHinduArabicToRomanNumeral({}, {
+			type: "INTEGER_TO_ROMAN",
+			hinduArabicNumber: 8
+	})).toEqual({
+			romanNumber: "VIII"
+	});
+});
