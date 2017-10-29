@@ -81,3 +81,12 @@ it("translates '9' to 'IX'", function () {
 			romanNumber: "IX"
 	});
 });
+
+it("translates '10' to 'X'", function () {
+	expect(convertHinduArabicToRomanNumeral({}, {
+		type: "INTEGER_TO_ROMAN",
+		hinduArabicNumber: 10
+	})).toEqual({
+		romanNumber: "X"
+	});
+});
