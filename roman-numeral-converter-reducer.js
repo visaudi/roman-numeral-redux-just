@@ -22,11 +22,12 @@ module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) 
                     romanNumeral: "V",
                     hinduArabicNumeral: 5
                 }, number);
-            }	
-            if (number === 9) {
-                return buildNumeralBeforeNewCharacter("X"); 
             }
-            return buildNumeralBeforeNewCharacter("V"); 
+            const nextRomanNumberEquivalent = number + 1;
+            const nextPotentialRomanNumeral = romanToHinduArabicConversion[nextRomanNumberEquivalent.toString()];
+            if (nextPotentialRomanNumeral) {
+                return buildNumeralBeforeNewCharacter(nextPotentialRomanNumeral); 
+            }
         }
         return buildRomanNumeral({
             romanNumeral: "I",
