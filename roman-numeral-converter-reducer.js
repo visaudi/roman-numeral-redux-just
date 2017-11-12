@@ -1,4 +1,10 @@
 module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) {
+    const romanToHinduArabicConversion = {
+        "1": "I",
+        "5": "V",
+        "10": "X" 
+    };
+
     function buildRomanNumeral (startingCharacterPair, number) {
         return startingCharacterPair.romanNumeral + repeatNumeralI(number - startingCharacterPair.hinduArabicNumeral);
     }
@@ -6,8 +12,9 @@ module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) 
         return "I" + newCharacter;
     }
     function repeatNumeralI (number) {
-        if (number === 10) {
-            return "X";
+        const romanCharacter = romanToHinduArabicConversion[number.toString()];
+        if (romanCharacter) {
+            return romanCharacter;
         }
         if (number > 3) {
             if (number > 5 && number < 9) {
@@ -16,21 +23,15 @@ module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) 
                     hinduArabicNumeral: 5
                 }, number);
             }	
-            if (number === 5) {
-                return "V";
-            }
             if (number === 9) {
                 return buildNumeralBeforeNewCharacter("X"); 
             }
             return buildNumeralBeforeNewCharacter("V"); 
         }
-        if (number > 1) {
-            return buildRomanNumeral({
-                romanNumeral: "I",
-                hinduArabicNumeral: 1
-            }, number);
-        }
-        return "I";
+        return buildRomanNumeral({
+            romanNumeral: "I",
+            hinduArabicNumeral: 1
+        }, number);
     }
     return {
         romanNumber: repeatNumeralI(action.hinduArabicNumber) 
