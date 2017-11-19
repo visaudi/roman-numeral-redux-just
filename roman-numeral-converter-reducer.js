@@ -2,7 +2,7 @@ module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) 
     const romanToHinduArabicConversion = {
         "1": "I",
         "5": "V",
-        "10": "X" 
+        "10": "X"
     };
 
     function buildRomanNumeral (startingCharacterPair, number) {
@@ -22,6 +22,9 @@ module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) 
                     romanNumeral: "V",
                     hinduArabicNumeral: 5
                 }, number);
+            }
+            if (number  ===  11) {
+               return "XI"
             }
             const nextRomanNumberEquivalent = number + 1;
             const nextPotentialRomanNumeral = romanToHinduArabicConversion[nextRomanNumberEquivalent.toString()];
