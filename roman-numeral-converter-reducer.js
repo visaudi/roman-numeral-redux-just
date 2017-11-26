@@ -5,39 +5,40 @@ module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) 
         "10": "X"
     };
 
-    function buildRomanNumeral (startingCharacterPair, number) {
+    function buildRomanNumeral(startingCharacterPair, number) {
         return startingCharacterPair.romanNumeral + repeatNumeralI(number - startingCharacterPair.hinduArabicNumeral);
     }
-    function buildNumeralBeforeNewCharacter (newCharacter) {
+
+    function buildNumeralBeforeNewCharacter(newCharacter) {
         return "I" + newCharacter;
     }
-    function repeatNumeralI (number) {
+
+    function repeatNumeralI(number) {
         const romanCharacter = romanToHinduArabicConversion[number.toString()];
         if (romanCharacter) {
             return romanCharacter;
         }
-        if (number > 3) {
-            if (number > 5 && number < 9) {
-                return buildRomanNumeral({
-                    romanNumeral: "V",
-                    hinduArabicNumeral: 5
-                }, number);
-            }
-            if (number  ===  11) {
-               return "XI"
-            }
-            const nextRomanNumberEquivalent = number + 1;
-            const nextPotentialRomanNumeral = romanToHinduArabicConversion[nextRomanNumberEquivalent.toString()];
-            if (nextPotentialRomanNumeral) {
-                return buildNumeralBeforeNewCharacter(nextPotentialRomanNumeral); 
-            }
+        if (number > 5 && number < 9) {
+            return buildRomanNumeral({
+                romanNumeral: "V",
+                hinduArabicNumeral: 5
+            }, number);
         }
+        if (number === 11) {
+            return "XI"
+        }
+        const nextRomanNumberEquivalent = number + 1;
+        const nextPotentialRomanNumeral = romanToHinduArabicConversion[nextRomanNumberEquivalent.toString()];
+        if (nextPotentialRomanNumeral) {
+            return buildNumeralBeforeNewCharacter(nextPotentialRomanNumeral);
+        }
+        console.log('hello', number);
         return buildRomanNumeral({
             romanNumeral: "I",
             hinduArabicNumeral: 1
         }, number);
     }
     return {
-        romanNumber: repeatNumeralI(action.hinduArabicNumber) 
+        romanNumber: repeatNumeralI(action.hinduArabicNumber)
     }
 };
