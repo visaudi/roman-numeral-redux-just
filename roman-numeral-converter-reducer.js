@@ -32,7 +32,6 @@ module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) 
         if (nextPotentialRomanNumeral) {
             return buildNumeralBeforeNewCharacter(nextPotentialRomanNumeral);
         }
-        console.log('hello', number);
         return buildRomanNumeral({
             romanNumeral: "I",
             hinduArabicNumeral: 1
