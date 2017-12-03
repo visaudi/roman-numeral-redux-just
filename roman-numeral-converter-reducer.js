@@ -21,9 +21,10 @@ module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) 
         if (number > 5 && number < 9) {
             return buildRomanNumeral(5, number);
         }
-        if (number === 11) {
-            return "XI"
+        if (number > 10) {
+            return buildRomanNumeral(10, number);
         }
+
         const nextRomanNumberEquivalent = number + 1;
         const nextPotentialRomanNumeral = romanToHinduArabicConversion[nextRomanNumberEquivalent.toString()];
         if (nextPotentialRomanNumeral) {
