@@ -6,14 +6,14 @@ module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) 
     };
 
     function buildRomanNumeral(hinduArabicNumberToConvert, number) {
-        return romanToHinduArabicConversion[hinduArabicNumberToConvert] + repeatNumeralI(number - hinduArabicNumberToConvert);
+        return romanToHinduArabicConversion[hinduArabicNumberToConvert] + repeatNumeral(number - hinduArabicNumberToConvert);
     }
 
     function buildNumeralBeforeNewCharacter(newCharacter) {
         return "I" + newCharacter;
     }
 
-    function repeatNumeralI(number) {
+    function repeatNumeral(number) {
         const romanCharacter = romanToHinduArabicConversion[number.toString()];
         if (romanCharacter) {
             return romanCharacter;
@@ -32,6 +32,6 @@ module.exports.convertHinduArabicToRomanNumeral = function (state = {}, action) 
         return buildRomanNumeral(1, number);
     }
     return {
-        romanNumber: repeatNumeralI(action.hinduArabicNumber)
+        romanNumber: repeatNumeral(action.hinduArabicNumber)
     }
 };
