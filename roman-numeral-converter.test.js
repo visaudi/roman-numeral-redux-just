@@ -110,3 +110,66 @@ it("translates '13' to 'XIII'", function () {
         romanNumber: "XIII"
     });
 });
+
+it("translates '14' to XIV", function () {
+    expect(convertHinduArabicToRomanNumeral({},{
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 14
+    })).toEqual({
+        romanNumber: "XIV"
+    });
+});
+
+it("translates '19' to XIX", function () {
+    expect(convertHinduArabicToRomanNumeral({},{
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 19
+    })).toEqual({
+        romanNumber: "XIX"
+    });
+});
+
+it("translates '20' to XX", function () {
+    expect(convertHinduArabicToRomanNumeral({},{
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 20
+    })).toEqual({
+        romanNumber: "XX"
+    });
+});
+
+it("translates '24' to XXIV", function () {
+    expect(convertHinduArabicToRomanNumeral({},{
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 24
+    })).toEqual({
+        romanNumber: "XXIV"
+    });
+});
+
+it("translates '30' to XXX", function () {
+    expect(convertHinduArabicToRomanNumeral({},{
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 30
+    })).toEqual({
+        romanNumber: "XXX"
+    });
+});
+
+it("translates '36' to XXXVI", function () {
+    expect(convertHinduArabicToRomanNumeral({},{
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 36
+    })).toEqual({
+        romanNumber: "XXXVI"
+    });
+});
+
+it("translates '40' to XL", function () {
+    expect(convertHinduArabicToRomanNumeral({},{
+        type: "INTEGER_TO_ROMAN",
+        hinduArabicNumber: 40
+    })).toEqual({
+        romanNumber: "XL"
+    });
+});
