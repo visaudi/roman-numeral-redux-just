@@ -51,29 +51,31 @@ it("translates '5' to 'V'", function () {
     });
 });
 
-it("translates '6' to 'VI'", function () {
-    expect(convertHinduArabicToRomanNumeral({}, {
-        type: "INTEGER_TO_ROMAN",
-        hinduArabicNumber: 6
-    })).toEqual({
-        romanNumber: "VI"
+describe("I's that increase by one beginning at six and ending in eight", function() {
+    it("translates '6' to 'VI'", function () {
+        expect(convertHinduArabicToRomanNumeral({}, {
+            type: "INTEGER_TO_ROMAN",
+            hinduArabicNumber: 6
+        })).toEqual({
+            romanNumber: "VI"
+        });
     });
-});
 
-it("translates '7' to 'VII'", function () {
-    expect(convertHinduArabicToRomanNumeral({}, {
-        type: "INTEGER_TO_ROMAN",
-        hinduArabicNumber: 7
-    })).toEqual({
-        romanNumber: "VII"
+    it("translates '7' to 'VII'", function () {
+        expect(convertHinduArabicToRomanNumeral({}, {
+            type: "INTEGER_TO_ROMAN",
+            hinduArabicNumber: 7
+        })).toEqual({
+            romanNumber: "VII"
+        });
     });
-});
-it("translates '8' to 'VIII'", function () {
-    expect(convertHinduArabicToRomanNumeral({}, {
-        type: "INTEGER_TO_ROMAN",
-        hinduArabicNumber: 8
-    })).toEqual({
-        romanNumber: "VIII"
+    it("translates '8' to 'VIII'", function () {
+        expect(convertHinduArabicToRomanNumeral({}, {
+            type: "INTEGER_TO_ROMAN",
+            hinduArabicNumber: 8
+        })).toEqual({
+            romanNumber: "VIII"
+        });
     });
 });
 
