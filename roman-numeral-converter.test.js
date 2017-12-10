@@ -2,35 +2,37 @@ const {
     convertHinduArabicToRomanNumeral
 } = require("./roman-numeral-converter-reducer");
 
-it("translates a Hindu Arabic numeral to its Roman numeral equivalent.", function () {
 
-    expect(convertHinduArabicToRomanNumeral({}, {
-        type: "INTEGER_TO_ROMAN",
-        hinduArabicNumber: 1
-    })).toEqual({
-        romanNumber: "I"
+describe("'I's that increase by one and end at three.", function () {
+    it("translates a Hindu Arabic numeral to its Roman numeral equivalent.", function () {
+
+        expect(convertHinduArabicToRomanNumeral({}, {
+            type: "INTEGER_TO_ROMAN",
+            hinduArabicNumber: 1
+        })).toEqual({
+            romanNumber: "I"
+        });
+
     });
 
-});
+    it("translates '2' to 'II'.", function () {
+        expect(convertHinduArabicToRomanNumeral({}, {
+            type: "INTEGER_TO_ROMAN",
+            hinduArabicNumber: 2
+        })).toEqual({
+            romanNumber: "II"
+        });
+    });
 
-it("translates '2' to 'II'.", function () {
-    expect(convertHinduArabicToRomanNumeral({}, {
-        type: "INTEGER_TO_ROMAN",
-        hinduArabicNumber: 2
-    })).toEqual({
-        romanNumber: "II"
+    it("translates '3' to 'III'.", function () {
+        expect(convertHinduArabicToRomanNumeral({}, {
+            type: "INTEGER_TO_ROMAN",
+            hinduArabicNumber: 3
+        })).toEqual({
+            romanNumber: "III"
+        });
     });
 });
-
-it("translates '3' to 'III'.", function () {
-    expect(convertHinduArabicToRomanNumeral({}, {
-        type: "INTEGER_TO_ROMAN",
-        hinduArabicNumber: 3
-    })).toEqual({
-        romanNumber: "III"
-    });
-});
-
 it("translates '4' to 'IV'", function () {
     expect(convertHinduArabicToRomanNumeral({}, {
         type: "INTEGER_TO_ROMAN",
